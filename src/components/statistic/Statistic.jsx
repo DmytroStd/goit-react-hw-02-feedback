@@ -1,6 +1,6 @@
-import React from "react";
+import React from 'react';
 
-import Notification from "../notification/Notification";
+import Notification from '../notification/Notification';
 import styles from './Statistic.module.css';
 
 const Statistics = ({
@@ -25,14 +25,14 @@ const Statistics = ({
           </li>
           <li className={styles.total}> total: {total} </li>
           <li className={styles.positivePercentage}>
-            positive percentage: {positivePercentage}%{" "}
+            positive percentage: {positivePercentage}%{' '}
           </li>
         </ul>
-          ) : (
+      ) : (
         <Notification message="there is no feedback" />
       )}
     </div>
   );
-}
+};
 
 export default Statistics;

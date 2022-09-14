@@ -1,8 +1,9 @@
-import React from "react";
-import PropTypes from "prop-types";
+import React from 'react';
+import PropTypes from 'prop-types';
+import styles from './Notification.module.css';
 
 export default function Notification({ message }) {
-  return <div>{<h2>{message}</h2>}</div>;
+  return <div>{<p className={styles.text}>{message}</p>}</div>;
 }
 Notification.propTypes = {
   message: PropTypes.string,
