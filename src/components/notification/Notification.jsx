@@ -6,5 +6,5 @@ export default function Notification({ message }) {
   return <div>{<p className={styles.text}>{message}</p>}</div>;
 }
 Notification.propTypes = {
-  message: PropTypes.string,
+  message: PropTypes.string.isRequired,
 };
