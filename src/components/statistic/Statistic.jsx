@@ -1,38 +1,44 @@
-import React from 'react';
-
-import Notification from '../notification/Notification';
+import PropTypes from 'prop-types';
 import styles from './Statistic.module.css';
 
 const Statistics = ({
-  positiveValue,
-  neutralValue,
-  negativeValue,
+  positive,
+  neutral,
+  negative,
   total,
   positivePercentage,
 }) => {
   return (
-    <div>
-      {positiveValue || neutralValue || negativeValue !== 0 ? (
-        <ul>
-          <li>
-            <span className={styles.positive}>positive</span>: {positiveValue}
-          </li>
-          <li>
-            <span className={styles.neutral}>neutral</span>: {neutralValue}
-          </li>
-          <li>
-            <span className={styles.negative}> negative</span>: {negativeValue}
-          </li>
-          <li className={styles.total}> total: {total} </li>
-          <li className={styles.positivePercentage}>
-            positive percentage: {positivePercentage}%{' '}
-          </li>
-        </ul>
-      ) : (
-        <Notification message="there is no feedback" />
-      )}
-    </div>
+    <ul className={styles.list}>
+      <li className={styles.item}>
+        <span>positive:</span>
+        <span>{positive}</span>
+      </li>
+      <li className={styles.item}>
+        <span>neutral:</span>
+        <span>{neutral}</span>
+      </li>
+      <li className={styles.item}>
+        <span>negative:</span>
+        <span>{negative}</span>
+      </li>
+      <li className={styles.item}>
+        <span>total:</span>
+        <span>{total}</span>
+      </li>
+      <li className={styles.item}>
+        <span>positive feedback:</span>
+        <span>{positivePercentage}%</span>
+      </li>
+    </ul>
   );
 };
 
+Statistics.propTypes = {
+  positive: PropTypes.number.isRequired,
+  neutral: PropTypes.number.isRequired,
+  negative: PropTypes.number.isRequired,
+  total: PropTypes.number.isRequired,
+  positivePercentage: PropTypes.number.isRequired,
+};
 export default Statistics;
