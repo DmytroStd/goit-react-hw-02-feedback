@@ -37,6 +37,7 @@ export class App extends Component {
     const positivePercentage = this.countPositiveFeedbackPercentage();
     const { positive, neutral, negative } = this.state;
     const feedbacks = Object.keys(this.state);
+
     return (
       <>
         <div className={styles.container}>
